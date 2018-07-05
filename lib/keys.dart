@@ -1,7 +1,7 @@
 library keys;
 
-import 'package:ctrl_alt_foo/shortcut.dart';
-import 'package:ctrl_alt_foo/key_event_x.dart';
+import 'package:ctrl_alt_foo2/shortcut.dart';
+import 'package:ctrl_alt_foo2/key_event_x.dart';
 
 class Keys {
   static List subscriptions = [];

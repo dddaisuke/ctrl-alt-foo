@@ -1,6 +1,6 @@
 library shortcut;
 
-import 'package:ctrl_alt_foo/key_event_x.dart';
+import 'package:ctrl_alt_foo2/key_event_x.dart';
 import 'key_identifier.dart';
 import 'dart:html';
 import 'dart:async';
@@ -93,7 +93,7 @@ class ShortCut {
   }
 }
 
-class ShortCutStream<T extends Event> extends Stream<T>
+class ShortCutStream<T extends KeyEvent> extends Stream<T>
     implements CustomStream<T> {
   StreamController<T> _streamController;
   String _type;
@@ -116,14 +116,17 @@ class ShortCutStream<T extends Event> extends Stream<T>
         onDone: onDone, cancelOnError: cancelOnError);
   }
 
-  Stream<T> asBroadcastStream({void onListen(StreamSubscription subscription),
-                               void onCancel(StreamSubscription subscription)})
-      => _streamController.stream;
+  Stream<T> asBroadcastStream(
+    {void onListen(StreamSubscription<T> subscription),
+      void onCancel(StreamSubscription<T> subscription)}) {
+    return _streamController.stream;
+  }
 
   bool get isBroadcast => true;
 
   void add(T event) {
-    if (event.type == _type) _streamController.add(new KeyEventX(event));
+    KeyEvent key_event_x = new KeyEventX(event);
+    if (event.type == _type) _streamController.add(key_event_x);
   }
 }
 

@@ -1,6 +1,6 @@
 # Ctrl Alt Foo
 
-[![Build Status](https://drone.io/github.com/eee-c/ctrl-alt-foo/status.png)](https://drone.io/github.com/eee-c/ctrl-alt-foo/latest)
+[![Build Status](https://drone.io/github.com/dddaisuke/ctrl-alt-foo/status.png)](https://drone.io/github.com/dddaisuke/ctrl-alt-foo/latest)
 
 Make it easy to listen for keyboard shortcuts / accelator keys.
 
@@ -9,7 +9,7 @@ Make it easy to listen for keyboard shortcuts / accelator keys.
 This is an early preview release and the syntax is not settled. Please add issues in the tracker if you have suggestions.
 
 ````dart
-import 'package:ctrl_alt_foo/keys.dart';
+import 'package:ctrl_alt_foo2/keys.dart';
 
 Keys.shortcuts({
   'Esc':          (){ _hideMenu(); _hideDialog(); },
@@ -22,7 +22,7 @@ Keys.shortcuts({
 There are also some helper methods for creating keyboard events:
 
 ````dart
-import 'package:ctrl_alt_foo/helpers.dart';
+import 'package:ctrl_alt_foo2/helpers.dart';
 
 typeIn('TEXT'); // will generate a keyup
 

@@ -1,9 +1,9 @@
 library ctrl_alt_foo_test;
 
-import 'package:ctrl_alt_foo/keys.dart';
-import 'package:ctrl_alt_foo/shortcut.dart';
+import 'package:ctrl_alt_foo2/keys.dart';
+import 'package:ctrl_alt_foo2/shortcut.dart';
 // import 'package:ctrl_alt_foo/key_event_x.dart';
-import 'package:ctrl_alt_foo/helpers.dart';
+import 'package:ctrl_alt_foo2/helpers.dart';
 
 import 'package:unittest/unittest.dart';
 import 'package:unittest/html_config.dart';

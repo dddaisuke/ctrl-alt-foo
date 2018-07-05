@@ -27,11 +27,11 @@ class KeyIdentifier {
     return _codeFor(key);
   }
 
-  static charCodeFor(String c) {
-    if (containsKey(c)) return 0;
-
-    return _codeFor(key);
-  }
+//  static charCodeFor(String c) {
+//    if (containsKey(c)) return 0;
+//
+//    return _codeFor(key);
+//  }
 
   static _codeFor(String c) {
     if (c.codeUnits.length > 2) throw "Don't know how to type “$c”";

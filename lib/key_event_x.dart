@@ -6,13 +6,13 @@ import 'dart:async';
 import 'key_identifier.dart';
 
 class KeyboardEventStreamX extends KeyboardEventStream {
-  static Stream<KeyEventX> onKeyPress(target) { throw UnimplementedError; }
+  static CustomStream<KeyEventX> onKeyPress(target) { throw UnimplementedError; }
 
   // The onKeyUp is intentionally unimplemented because there does not seem to
   // be a way to normalize onKeyUp events for Enter keys (in IE).
   //static Stream<KeyEventX> onKeyUp(EventTarget target)
 
-  static Stream<KeyEventX> onKeyDown(EventTarget target) {
+  static CustomStream<KeyEventX> onKeyDown(EventTarget target) {
     return KeyboardEventStream.onKeyDown(target);
   }
 }
@@ -55,7 +55,11 @@ class KeyEventX extends KeyEvent {
 
   int get keyCode => _parent.keyCode;
 
-  set cancelBubble(bool v) {_parent.cancelBubble = v;}
+  set cancelBubble(bool v) {
+    if (v) {
+      _parent.stopPropagation();
+    }
+  }
 
   // TODO: Delegate to _parent
   // For now, satisfy dartanalyzer that we are extending properly
